@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Shree Raggvendra Travels - Ooty</title>
+
+  <!-- AOS Animation Library -->
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Segoe UI', sans-serif; }
+
+    /* Navbar */
+    .navbar {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.7);
+      padding: 10px 20px;
+      z-index: 1000;
+    }
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: auto;
+      color: white;
+    }
+    .logo {
+      font-size: 1.5em;
+      font-weight: bold;
+    }
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 20px;
+    }
+    .nav-links li a {
+      color: white;
+      text-decoration: none;
+      font-size: 1em;
+    }
+    .nav-links li a:hover {
+      color: #28a745;
+    }
+
+    /* Mobile Nav */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+    .hamburger div {
+      width: 25px;
+      height: 3px;
+      background-color: white;
+      margin: 4px 0;
+    }
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        background-color: #000;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        width: 200px;
+        border-radius: 8px;
+        padding: 10px;
+      }
+      .nav-links.show {
+        display: flex;
+      }
+      .hamburger {
+        display: flex;
+      }
+    }
+
+    /* Hero Section */
+    .hero {
+      background-image: url('https://yourusername.github.io/yourproject/istockphoto-1269011657-1024x1024.jpg');
+      background-size: cover;
+      background-position: center;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      text-align: center;
+      color: white;
+    }
+    .overlay {
+      background: rgba(0, 0, 0, 0.6);
+      position: absolute;
+      top: 0; left: 0;
+      height: 100%; width: 100%;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    /* Sections */
+    .section {
+      padding: 60px 20px;
+      text-align: center;
+    }
+    .section h2 {
+      font-size: 2em;
+      margin-bottom: 20px;
+    }
+    .section p {
+      max-width: 700px;
+      margin: auto;
+      font-size: 1.1em;
+      line-height: 1.6;
+    }
+
+    /* Gallery */
+    .gallery-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 20px;
+    }
+    .gallery-container img {
+      width: 300px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    /* Booking Form */
+    form {
+      max-width: 500px;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    input, textarea {
+      padding: 10px;
+      font-size: 1em;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    button {
+      padding: 12px;
+      font-size: 1em;
+      background: #28a745;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    /* WhatsApp Button */
+    .whatsapp-btn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #25D366;
+      color: white;
+      border-radius: 50%;
+      padding: 15px;
+      font-size: 24px;
+      text-align: center;
+      text-decoration: none;
+      z-index: 999;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar">
+  <div class="nav-container">
+    <span class="logo">Shree Travels</span>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="#booking">Booking</a></li>
+    </ul>
+    <div class="hamburger" onclick="toggleMenu()">
+      <div></div><div></div><div></div>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero Section -->
+<div class="hero" id="home">
+  <div class="overlay"></div>
+  <div class="hero-content" data-aos="fade-up">
+    <h1>Shree Raggvendra Travels – Ooty</h1>
+    <p>Travel Agent with 15+ Years of Experience</p>
+    <p>Elegant, Trusted Sightseeing Tours and Rentals</p>
+  </div>
+</div>
+
+<!-- About -->
+<div class="section" id="about" data-aos="fade-right">
+  <h2>About Us</h2>
+  <p>We provide local sightseeing, tea estate tours, car rentals and family trip services for over 15 years in Ooty. With deep local knowledge and dedicated service, your journey is in trusted hands.</p>
+</div>
+
+<!-- Services -->
+<div class="section" id="services" data-aos="fade-left">
+  <h2>Our Services</h2>
+  <p>
+    • Ooty Sightseeing Tours<br/>
+    • Car & Van Rentals (AC/Non-AC)<br/>
+    • Pickup/Drop from Bus Stand & Railway<br/>
+    • Group & Family Packages<br/>
+    • Custom Itineraries
+  </p>
+</div>
+
+<!-- Gallery -->
+<div class="section" id="gallery" data-aos="zoom-in">
+  <h2>Gallery</h2>
+  <div class="gallery-container">
+    <img src="https://source.unsplash.com/400x300/?ooty,hills">
+    <img src="https://source.unsplash.com/400x300/?ooty,tea-estate">
+    <img src="https://source.unsplash.com/400x300/?ooty,bus">
+    <img src="https://source.unsplash.com/400x300/?ooty,nature">
+  </div>
+</div>
+
+<!-- Contact -->
+<div class="section" id="contact" data-aos="fade-up">
+  <h2>Contact Us</h2>
+  <p>
+    📞 +91 93849 89077<br/>
+    📧 <a href="mailto:Manju9041mp@gmail.com">Manju9041mp@gmail.com</a><br/>
+    📍 Do/47, Raja Lodge, Near Main Bus Stand, Ooty 643001<br/>
+    💬 <a href="https://wa.me/9487840509">WhatsApp Us</a>
+  </p>
+</div>
+
+<!-- Booking Form -->
+<div class="section" id="booking" data-aos="fade-up">
+  <h2>Booking Form</h2>
+  <form>
+    <input type="text" placeholder="Your Name" required />
+    <input type="tel" placeholder="Phone Number" required />
+    <input type="date" required />
+    <textarea rows="4" placeholder="Your message or destination details"></textarea>
+    <button type="submit">Submit Booking</button>
+  </form>
+</div>
+
+<!-- WhatsApp Button -->
+<a class="whatsapp-btn" href="https://wa.me/9487840509" target="_blank">💬</a>
+
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init();
+  function toggleMenu() {
+    document.getElementById("navLinks").classList.toggle("show");
+  }
+</script>
+
+</body>
+</html>
